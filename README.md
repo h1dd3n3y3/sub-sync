@@ -1,4 +1,4 @@
-# sub_sync
+# sub-sync
 A simple bash script for adjusting subtitle file timing, making changes permament, while providing graphical progress of the work being done.
 ## Usage:
 ```
