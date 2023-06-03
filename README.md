@@ -1,8 +1,9 @@
 # sub_sync
 A simple bash script for adjusting subtitle file timing, making changes permament, while providing graphical progress of the work being done.
-## Usage
+## Usage:
 ```
-bash sub_sync.sh [OPTION] <subtitle-file> <time-offset-in-sec>
+bash sub_sync.sh [OPTIONS] <subtitle-file> <time-offset-in-sec>
 ```
-Where OPTION: `-s, --silent: Suppress graphical progress.`  
-`-s` or `--silent` is useful to systems that are limited in resources, like VMs, SSH connections, low RAM, etc.
+OPTIONS:  
+- `-s, --silent: Suppress graphical progress.` Useful in cases with limited terminal refresh capabilities, like VMs & SSH connections.  
+- `-h, --help: Show this usage prompt.`
