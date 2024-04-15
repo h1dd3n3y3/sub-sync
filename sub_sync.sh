@@ -80,7 +80,7 @@ if [ $# -ge 2 ]; then
         if [[ "${args[$a]}" =~ \.srt$ ]]; then
             subs=${args[$a]}
 
-            cp "$subs | cut -d'.' -f1" "$($subs | cut -d'.' -f1)_$(date +"%Y-%m-%d_%H-%M-%S").srt" # Backup the original subtitle file
+            cp "$subs" "$(echo $subs | awk -F'.srt' '{print $1}')_$(date +"%Y-%m-%d_%H-%M-%S").srt" # Backup the original subtitle file
             
             n=0
             totts=$(grep -o '[0-5][0-9]:[0-5][0-9]:[0-5][0-9],[0-9][0-9][0-9]' "$subs" | wc -l)
