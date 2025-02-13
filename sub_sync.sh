@@ -95,7 +95,8 @@ if [ $# -ge 2 ]; then
         fi
     done
 
-    echo $timeoff
+    echo Shifting $timeoff seconds...
+    echo -n Processing
 
     for i in $(grep -o '[0-5][0-9]:[0-5][0-9]:[0-5][0-9],[0-9][0-9][0-9]' "$subs"); do
         ts_to_sec "$i"                  # Convert the extracted timestamp to seconds
@@ -109,12 +110,13 @@ if [ $# -ge 2 ]; then
             progress=${progress:0:3}
             dialogue "$i" "$newts"
             percentage "$progress"
-        else
-	        echo "Processing..."
+        else                            # Progress dots
+            sleep 0.5
+	        echo -n .
         fi
     done
 
-    echo "Done."
+    echo; echo "Done."
 
 elif [ $# -lt 2 ]; then
     echo "Try '$0 [OPTION] <subtitles> <offset>'"
