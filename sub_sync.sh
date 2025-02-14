@@ -111,7 +111,6 @@ if [ $# -ge 2 ]; then
             dialogue "$i" "$newts"
             percentage "$progress"
         else                            # Progress dots
-            sleep 0.5
 	        echo -n .
         fi
     done
