@@ -80,6 +80,8 @@ if [ $# -ge 2 ]; then
         if [[ "${args[$a]}" =~ \.srt$ ]]; then
             subs=${args[$a]}
 
+            dos2unix "$subs" # Convert DOS to Unix format to avoid carriage return issues
+
             cp "$subs" "$(echo $subs | awk -F'.srt' '{print $1}')_$(date +"%Y-%m-%d_%H-%M-%S").srt" # Backup the original subtitle file
             
             n=0
@@ -110,12 +112,12 @@ if [ $# -ge 2 ]; then
             progress=${progress:0:3}
             dialogue "$i" "$newts"
             percentage "$progress"
-        else                            # Progress dots
-	        echo -n .
+        else
+	        echo -n '.' # Progress dots
         fi
     done
 
-    echo; echo "Done."
+    echo; echo "Done!"
 
 elif [ $# -lt 2 ]; then
     echo "Try '$0 [OPTION] <subtitles> <offset>'"
