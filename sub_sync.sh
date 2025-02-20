@@ -100,6 +100,7 @@ if [ $# -ge 2 ]; then
     echo Shifting $timeoff seconds...
     echo -n Processing
 
+    # for i in $(grep -- "-->" | awk '{print $1"\n"$3}' "$subs"); do
     for i in $(grep -o '[0-5][0-9]:[0-5][0-9]:[0-5][0-9],[0-9][0-9][0-9]' "$subs"); do
         ts_to_sec "$i"                  # Convert the extracted timestamp to seconds
         offset "$timeoff"               # Add the given offset seconds to the previously converted timestamp
