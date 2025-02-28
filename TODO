@@ -2,3 +2,5 @@ Check subtitle count:
 
 1. No missing numbers in-between starting and ending numbers
 2. All numbers in correct order
+
+Add -n flag for no backup
