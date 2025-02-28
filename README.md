@@ -8,5 +8,7 @@ bash sub_sync.sh [OPTIONS] <subtitle-file> <seconds-offset>
 `<seconds-offset>` : A Real Number of seconds offset (even negative or floating point)  
 
 OPTIONS:  
-- `-s, --silent: Suppress graphical progress.` Useful when not ran natively, like VMs & SSH connections, where lag is presented in the progress bar.  
+- `-s, --silent: Suppress graphical progress.`  
+  Useful when not ran natively, like VMs & SSH connections, where lag is presented in the progress bar.
+  
 - `-h, --help: Show this usage prompt.`
