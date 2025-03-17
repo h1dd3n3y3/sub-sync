@@ -4,3 +4,6 @@ Check subtitle count:
 2. All numbers in correct order
 
 Add -n flag for no backup
+
+Note: Numbering starts from 1, not 0.
+      Sometimes it's OK to start with 0.
